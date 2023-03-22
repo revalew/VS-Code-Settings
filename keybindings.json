@@ -1,0 +1,40 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+	{
+		"key": "alt+z",
+		"command": "-editor.action.toggleWordWrap"
+	},
+	{
+		"key": "shift+delete",
+		"command": "editor.action.deleteLines",
+		"when": "textInputFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+k",
+		"command": "-editor.action.deleteLines",
+		"when": "textInputFocus && !editorReadonly"
+	},
+	{
+		"key": "f5",
+		"command": "matlab-interactive-terminal.runMatlabScript",
+		"postProcess": [
+			{
+				"name": "Launch workbench",
+				"command": "workbench.action.terminal.sendSequence",
+				"args": {
+					"text": "workspace\n",
+					"terminalName": "MATLAB"
+				}
+			}
+		]
+	}
+	// {
+	// 	"key": "f6",
+	// 	"command": "workbench.action.terminal.sendSequence",
+	// 	"args": {
+	// 		"text": "workspace\n",
+	// 		"terminalName": "MATLAB"
+	// 	},
+	// 	"when": "terminalFocus"
+	// }
+]

@@ -1,0 +1,192 @@
+{
+	// General settings
+	"files.autoSave": "afterDelay",
+	"editor.formatOnSave": true,
+	"workbench.iconTheme": "material-icon-theme",
+	"prettier.arrowParens": "avoid",
+	"prettier.jsxSingleQuote": true,
+	"prettier.bracketSameLine": true,
+	"prettier.semi": false,
+	"prettier.singleQuote": true,
+	"prettier.useTabs": true,
+	"prettier.printWidth": 120,
+	"explorer.confirmDragAndDrop": false,
+	"editor.wordWrap": "on",
+	"editor.linkedEditing": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.cursorBlinking": "expand",
+	"editor.bracketPairColorization.enabled": true,
+	"workbench.colorCustomizations": {
+		"editorBracketHighlight.foreground1": "#ffd700",
+		"editorBracketHighlight.foreground2": "#ff00ff",
+		"editorBracketHighlight.foreground3": "#00bfff",
+		"editorBracketHighlight.foreground4": "#7cfc00",
+		"editorBracketHighlight.unexpectedBracket.foreground": "#ff0000"
+	},
+	"workbench.sideBar.location": "right", // sidebar on the right (guess I am a monster)
+	"window.menuBarVisibility": "compact",
+	"[html]": {
+		"editor.defaultFormatter": "vscode.html-language-features"
+	},
+	"emmet.syntaxProfiles": {
+		"html": {
+			"inline_break": 2
+		}
+	},
+	"emmet.variables": {
+		"lang": "pl"
+	},
+	"[python]": {
+		"editor.formatOnType": true,
+		"editor.defaultFormatter": "ms-python.python"
+	},
+
+	// Theme
+	"workbench.colorTheme": "Dracula",
+
+	// Biggest resource waster AKA best extension ever
+	"vscode-pets.petType": "dog",
+	"vscode-pets.theme": "castle",
+	"vscode-pets.petSize": "medium",
+	"vscode-pets.position": "explorer",
+
+	// Live SASS compiler settings
+	"liveSassCompile.settings.showOutputWindowOn": "None",
+	"liveSassCompile.settings.formats": [
+		{
+			"format": "expanded",
+			"extensionName": ".css",
+			// "savePath": "/css" //root of workspace
+			"savePath": "~/../css" // relative to sass folder => .scss file -> ../ -> css folder
+		}
+	],
+
+	// PHP config for intelisense
+	"intelephense.files.associations": ["*.php", "*.phtml"],
+	"intelephense.phpdoc.functionTemplate": {
+		"summary": "$1",
+		"tags": ["@param ${1:$SYMBOL_TYPE} $SYMBOL_NAME $2", "@return ${1:$SYMBOL_TYPE} $2", "@throws ${1:$SYMBOL_TYPE} $2"]
+	},
+
+	// List of ignored extensions
+	"settingsSync.ignoredExtensions": ["platformio.platformio-ide", "ms-python.isort", "ms-vsliveshare.vsliveshare"],
+
+	// GitBash Terminal
+	"terminal.integrated.profiles.windows": {
+		// "Anaconda3": { "path": "" }, // My Conda terminal
+		"GitBash": { "path": "D:\\VisualStudio\\Git\\bin\\bash.exe" } // My git bash terminal path
+	},
+	"terminal.integrated.defaultProfile.windows": "GitBash",
+
+	// GitLens configuration
+	"gitlens.hovers.currentLine.over": "line",
+	"gitlens.statusBar.enabled": false,
+	"gitlens.advanced.messages": {
+		"suppressCommitHasNoPreviousCommitWarning": true
+	},
+
+	// Edge Dev Tools configuration
+	"vscode-edge-devtools.webhint": false,
+	"vscode-edge-devtools.defaultUrl": "http://127.0.0.1:3000/", // Live Server default port is 5500. Browsersync's (gulp) default is 3000
+	"vscode-edge-devtools.sourceMapPathOverrides": {
+		"webpack:///./*": "${webRoot}/*",
+		"webpack:///src/*": "${webRoot}/*",
+		"webpack:///*": "*",
+		"webpack:///./~/*": "${webRoot}/node_modules/*",
+		"webpack://*": "${webRoot}/*",
+		"meteor://💻app/*": "${webRoot}/*"
+	},
+
+	// Live Server settings
+	"liveServer.settings.NoBrowser": true, // This works better when using the Edge extension
+	"liveServer.settings.donotVerifyTags": true,
+	"liveServer.settings.donotShowInfoMsg": true,
+	
+	// Jupyter Notebook
+	"notebook.lineNumbers": "on",
+	"jupyter.askForKernelRestart": false,
+
+	// Python
+	"python.analysis.completeFunctionParens": true,
+
+	// File association
+	"files.associations": {
+		"*.kit": "html", // associate .kit format with HTML langauage
+		"*.m": "matlab" // MATLAB
+	},
+
+	// MATLAB config
+	"matlab.mlintpath": "D:\\Program Files (x86)\\MATLAB\\R2021b\\bin\\win64\\mlint.exe", // mlint
+	"matlab.linterConfig": "D:\\Program Files (x86)\\MATLAB\\R2021b\\bin\\win64\\mlint.exe", // linter config
+	"matlab.matlabpath": "D:\\Program Files (x86)\\MATLAB\\R2021b\\bin\\matlab.exe", // matlab
+	"[matlab]": {
+		"files.encoding": "windows1252" // change the encoding type
+	},
+	
+	// LaTeX setup
+	"latex-workshop.latex.tools": [
+		// Note : Use %DOCFILE% instead of %DOC% in the configuration to enable support for Unicode file paths.
+		{
+			"name": "xelatex",
+			"command": "xelatex",
+			"args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "-output-directory=%OUTDIR%", "%DOC%"],
+			"env": {}
+		},
+		{
+			"name": "latexmk",
+			"command": "latexmk",
+			"args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "-pdf", "-outdir=%OUTDIR%", "%DOCFILE%"],
+			"env": {}
+		},
+		{
+			"name": "pdflatex",
+			"command": "pdflatex",
+			"args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"],
+			"env": {}
+		},
+		{
+			"name": "bibtex",
+			"command": "bibtex",
+			"args": ["%DOCFILE%"],
+			"env": {}
+		}
+	],
+	"latex-workshop.latex.recipes": [
+		{
+			"name": "latexmk 🔃",
+			"tools": ["latexmk"]
+		},
+		{
+			"name": "xelatex 🔃",
+			// "name": "xelatex",
+			"tools": ["xelatex"]
+		},
+		{
+			"name": "pdfLaTeX 🔃",
+			"tools": ["pdflatex"]
+		},
+		{
+			"name": "pdflatex ➞ bibtex ➞ pdflatex.2x  🔃",
+			"tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+		},
+		{
+			"name": "xelatex ➞ bibtex ➞ xelatex.2x 🔃",
+			"tools": ["xelatex", "bibtex", "xelatex", "xelatex"]
+		}
+	],
+	"latex-workshop.latex.autoBuild.run": "onSave",
+	"latex-workshop.latex.outDir": "./../dist",
+	"latex-workshop.latex.search.rootFiles.include": ["**/*.tex"],
+	"latex-workshop.texcount.autorun": "onSave",
+	"latex-workshop.view.pdf.zoom": "page-fit",
+	"latex-workshop.latex.autoClean.run": "onBuilt", // testing
+
+	// C / C++ config
+	"C_Cpp.autocompleteAddParentheses": true, // automatically add parentheses => write "main" anh have "main()"
+	"code-runner.enableAppInsights": false, // disable telemetry (suposedly)
+	"code-runner.fileDirectoryAsCwd": true, // This allows to access any files in the same directory as the file being executed, making it easier to reference and use those files in the code.
+	"code-runner.runInTerminal": true, // run the code in terminal instedad of the output tab
+	"code-runner.terminalRoot": "/", // without this line everything stops working in terminal
+	"code-runner.preserveFocus": false, // execute and focus on terminal => useful for input requiring apps
+	"code-runner.clearPreviousOutput": true, // clear the terminal on each run
+}
