@@ -84,6 +84,8 @@
 	"gitlens.advanced.messages": {
 		"suppressCommitHasNoPreviousCommitWarning": true
 	},
+	"git.confirmSync": false,
+	"git.enableSmartCommit": true,
 
 	// Edge Dev Tools configuration
 	"vscode-edge-devtools.webhint": false,
@@ -101,9 +103,10 @@
 	"liveServer.settings.NoBrowser": true, // This works better when using the Edge extension
 	"liveServer.settings.donotVerifyTags": true,
 	"liveServer.settings.donotShowInfoMsg": true,
-	
+
 	// Jupyter Notebook
 	"notebook.lineNumbers": "on",
+	"notebook.formatOnSave.enabled": true,
 	"jupyter.askForKernelRestart": false,
 
 	// Python
@@ -120,22 +123,32 @@
 	"matlab.linterConfig": "D:\\Program Files (x86)\\MATLAB\\R2021b\\bin\\win64\\mlint.exe", // linter config
 	"matlab.matlabpath": "D:\\Program Files (x86)\\MATLAB\\R2021b\\bin\\matlab.exe", // matlab
 	"[matlab]": {
-		"files.encoding": "windows1252" // change the encoding type
+		// "files.encoding": "windows1252" // change the encoding type
+		"files.encoding": "windows1250" // change the encoding type so it can include the polish letters  
 	},
-	
+
 	// LaTeX setup
 	"latex-workshop.latex.tools": [
 		// Note : Use %DOCFILE% instead of %DOC% in the configuration to enable support for Unicode file paths.
 		{
-			"name": "xelatex",
-			"command": "xelatex",
-			"args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "-output-directory=%OUTDIR%", "%DOC%"],
+			"name": "latexmk",
+			"command": "latexmk",
+			"args": [
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"-pdf",
+				"-outdir=%OUTDIR%",
+				"-emulate-aux-dir",
+				"-aux-directory=%OUTDIR%/auxiliary",
+				"%DOCFILE%"
+			],
 			"env": {}
 		},
 		{
-			"name": "latexmk",
-			"command": "latexmk",
-			"args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "-pdf", "-outdir=%OUTDIR%", "%DOCFILE%"],
+			"name": "xelatex",
+			"command": "xelatex",
+			"args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "-output-directory=%OUTDIR%", "%DOC%"],
 			"env": {}
 		},
 		{
@@ -174,12 +187,13 @@
 			"tools": ["xelatex", "bibtex", "xelatex", "xelatex"]
 		}
 	],
-	"latex-workshop.latex.autoBuild.run": "onSave",
 	"latex-workshop.latex.outDir": "./../dist",
 	"latex-workshop.latex.search.rootFiles.include": ["**/*.tex"],
-	"latex-workshop.texcount.autorun": "onSave",
 	"latex-workshop.view.pdf.zoom": "page-fit",
-	"latex-workshop.latex.autoClean.run": "onBuilt", // testing
+	"latex-workshop.latex.clean.subfolder.enabled": true, // can clean auxilary files in subfolders (which i have specified with auxdir in latexmk)
+	"latex-workshop.message.error.show": false, // annoying because it requires closing it manualy
+	"latex-workshop.message.warning.show": false, // compilation error => can already see the red "x" and no of problems so just annoying
+	// "latex-workshop.latex.autoClean.run": "onBuilt", // testing
 
 	// C / C++ config
 	"C_Cpp.autocompleteAddParentheses": true, // automatically add parentheses => write "main" anh have "main()"
@@ -188,5 +202,5 @@
 	"code-runner.runInTerminal": true, // run the code in terminal instedad of the output tab
 	"code-runner.terminalRoot": "/", // without this line everything stops working in terminal
 	"code-runner.preserveFocus": false, // execute and focus on terminal => useful for input requiring apps
-	"code-runner.clearPreviousOutput": true, // clear the terminal on each run
+	"code-runner.clearPreviousOutput": true // clear the terminal on each run
 }
