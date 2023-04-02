@@ -16,25 +16,25 @@
 	},
 	{
 		"key": "f5",
-		"command": "matlab-interactive-terminal.runMatlabScript",
-		"postProcess": [
-			{
-				"name": "Launch workbench",
-				"command": "workbench.action.terminal.sendSequence",
-				"args": {
-					"text": "workspace\n",
-					"terminalName": "MATLAB"
-				}
-			}
-		]
+		"command": "matlab-interactive-terminal.runMatlabScript"
+		// "postProcess": [
+		// 	{
+		// 		"name": "Launch workbench",
+		// 		"command": "workbench.action.terminal.sendSequence",
+		// 		"args": {
+		// 			"text": "workspace\n",
+		// 			"terminalName": "MATLAB"
+		// 		}
+		// 	}
+		// ]
+	},
+	{
+		"key": "f6",
+		"command": "workbench.action.terminal.sendSequence",
+		"args": {
+			"text": "workspace\n",
+			"terminalName": "MATLAB"
+		},
+		"when": "terminalFocus"
 	}
-	// {
-	// 	"key": "f6",
-	// 	"command": "workbench.action.terminal.sendSequence",
-	// 	"args": {
-	// 		"text": "workspace\n",
-	// 		"terminalName": "MATLAB"
-	// 	},
-	// 	"when": "terminalFocus"
-	// }
 ]
