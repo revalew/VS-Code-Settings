@@ -25,6 +25,9 @@
 	},
 	"workbench.sideBar.location": "right", // sidebar on the right (guess I am a monster)
 	"window.menuBarVisibility": "compact",
+	"editor.minimap.enabled": false,
+	"security.workspace.trust.untrustedFiles": "open",
+
 	"[html]": {
 		"editor.defaultFormatter": "vscode.html-language-features"
 	},
@@ -40,7 +43,7 @@
 		"editor.formatOnType": true,
 		"editor.defaultFormatter": "ms-python.python"
 	},
-
+	
 	// Theme
 	"workbench.colorTheme": "Dracula",
 
@@ -122,10 +125,10 @@
 	"matlab.mlintpath": "D:\\Program Files (x86)\\MATLAB\\R2021b\\bin\\win64\\mlint.exe", // mlint
 	"matlab.linterConfig": "D:\\Program Files (x86)\\MATLAB\\R2021b\\bin\\win64\\mlint.exe", // linter config
 	"matlab.matlabpath": "D:\\Program Files (x86)\\MATLAB\\R2021b\\bin\\matlab.exe", // matlab
-	"[matlab]": {
-		// "files.encoding": "windows1252" // change the encoding type
-		"files.encoding": "windows1250" // change the encoding type so it can include the polish letters  
-	},
+	// "[matlab]": {
+	// 	// "files.encoding": "windows1252" // change the encoding type
+	// 	"files.encoding": "windows1250" // change the encoding type so it can include the polish letters but it does not work somehow
+	// },
 
 	// LaTeX setup
 	"latex-workshop.latex.tools": [
@@ -194,6 +197,7 @@
 	"latex-workshop.message.error.show": false, // annoying because it requires closing it manualy
 	"latex-workshop.message.warning.show": false, // compilation error => can already see the red "x" and no of problems so just annoying
 	// "latex-workshop.latex.autoClean.run": "onBuilt", // testing
+	"latex-workshop.latex.autoBuild.interval": 2000,
 
 	// C / C++ config
 	"C_Cpp.autocompleteAddParentheses": true, // automatically add parentheses => write "main" anh have "main()"
@@ -202,5 +206,11 @@
 	"code-runner.runInTerminal": true, // run the code in terminal instedad of the output tab
 	"code-runner.terminalRoot": "/", // without this line everything stops working in terminal
 	"code-runner.preserveFocus": false, // execute and focus on terminal => useful for input requiring apps
-	"code-runner.clearPreviousOutput": true // clear the terminal on each run
+	"code-runner.clearPreviousOutput": true, // clear the terminal on each run
+	
+	// Remote SSH configuration
+	"remote.SSH.remotePlatform": {
+		"raspberrypi.local": "linux"
+	}
+
 }
